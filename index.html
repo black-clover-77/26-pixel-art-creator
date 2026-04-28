@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pixel Art Creator | Unique Feature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/mobile.css" />
+    <link rel="stylesheet" href="../shared/experience-kit.css" />
+    <link rel="stylesheet" href="../shared/fx-kit.css" />
+    <link rel="stylesheet" href="../shared/engagement-kit.css" />
+    <link rel="stylesheet" href="../shared/soundkit.css" />
+</head>
+<body>
+    <div id="loader">
+        <p style="letter-spacing: 5px; font-size: 0.7rem;">LOADING STUDIO...</p>
+    </div>
+
+    <div class="feature-tag">CORE_FEATURE_26</div>
+
+    <audio id="bg-audio" loop>
+        <source src="https://cdn.pixabay.com/audio/2021/11/25/audio_1e3a9a1e9a.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="audio-toggle">🎵</button>
+
+    <div id="app">
+        <div class="canvas-area" id="grid"></div>
+        <div class="controls">
+            <h3 style="font-size: 0.8rem; letter-spacing: 3px;">PALETTE</h3>
+            <div style="display: flex; gap: 10px;">
+                <div class="color-dot active" style="background: #f72585;" data-color="#f72585"></div>
+                <div class="color-dot" style="background: #4cc9f0;" data-color="#4cc9f0"></div>
+                <div class="color-dot" style="background: #7209b7;" data-color="#7209b7"></div>
+                <div class="color-dot" style="background: #00ff9f;" data-color="#00ff9f"></div>
+            </div>
+            <button id="clear-btn" style="background:transparent; border:1px solid #444; color:#888; padding:10px; cursor:pointer; font-family:inherit; font-size: 0.6rem;">CLEAR GRID</button>
+        </div>
+    </div>
+
+    <footer class="github-badge">
+        <a href="https://github.com/AkshatRock/weboreel-hackathon" target="_blank">⭐ GitHub Repo</a>
+        <span>VishwaNova 2026</span>
+    </footer>
+
+    <script src="../shared/soundkit.js" defer></script>
+    <script src="../shared/experience-kit.js" defer></script>
+    <script src="../shared/engagement-kit.js" defer></script>
+    <script src="../shared/experience-configs-22-50.js" defer></script>
+    <script src="../shared/fx-kit.js" defer></script>
+    <script src="script.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const parts = location.pathname.split("/").filter(Boolean);
+        const slug = parts[parts.length - 2] || "";
+        const cfg = window.WeboReelsExperienceConfigs22to50?.[slug] || { title: document.title };
+        window.WeboReelsExperienceKit?.init?.(cfg);
+      });
+    </script>
+</body>
+</html>
